@@ -1,8 +1,10 @@
 module washing_machine(clk, reset,coin, door_close, start, filled, detergent_added, cycle_timeout, drained, spin_timeout, door_lock, motor_on, 
-fill_value_on, drain_value_on, done, soap_wash, water_wash,change);
- input clk, reset, door_close, start, filled, detergent_added, cycle_timeout, drained, spin_timeout;
-    input [1:0]coin;
- output reg door_lock, motor_on, fill_value_on, drain_value_on, done, soap_wash, water_wash; 
+                       fill_value_on, drain_value_on, done, soap_wash, water_wash,change);
+
+input clk, reset, door_close, start, filled, detergent_added, cycle_timeout, drained, spin_timeout;
+input [1:0]coin;
+
+output reg door_lock, motor_on, fill_value_on, drain_value_on, done, soap_wash, water_wash; 
 output reg [1:0]change=2'b00;
  
  //defining the states
@@ -21,15 +23,14 @@ output reg [1:0]change=2'b00;
   check_door:
    if(start==1 && door_close==1)
    begin    next_state= fill_water;
-      motor_on = 0;
-    fill_value_on = 0;
-    drain_value_on = 0;
-    door_lock = 1;
-    soap_wash = 0;
-    water_wash = 0;
-    done = 0; 7
- 7
-end
+            motor_on = 0;
+            fill_value_on = 0;
+            drain_value_on = 0;
+            door_lock = 1;
+            soap_wash = 0;
+            water_wash = 0;
+            done = 0; 
+   end
    else
    begin
     next_state = current_state;
@@ -55,8 +56,8 @@ end
      soap_wash = 1;
      water_wash = 0;
      done = 0;
-    end 8
- 8
+    end 
+ 
 else
     begin
      next_state = cycle;
@@ -78,8 +79,7 @@ else
     door_lock = 1;
     done = 0;
    end
- 9
- 9
+ 
 add_detergent:
    if(detergent_added==1)
    begin
@@ -102,8 +102,7 @@ add_detergent:
     water_wash = 0;
     done = 0;
    end
- 10
- 10
+
 cycle:
    if(cycle_timeout == 1)
    begin
@@ -123,8 +122,7 @@ cycle:
     door_lock = 1;
     done = 0;
    end
- 11
- 11
+
 drain_water:
     if(drained==1)
     begin
@@ -150,8 +148,7 @@ drain_water:
      done = 0;
     end
    end
- 12
- 12
+
 else
    begin
     next_state = current_state;
@@ -175,8 +172,7 @@ else
     done = 1;
                 change=coin-2’b10;
    end
- 13
- 13
+ 
 else
    begin
     next_state = current_state;
@@ -203,9 +199,7 @@ else
     soap_wash = 0;
     water_wash = 0;
     done = 0;
- 14
- 14
-15
+
  change=coin;
  end 
 end
