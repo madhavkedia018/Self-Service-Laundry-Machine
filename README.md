@@ -18,10 +18,11 @@ State transitions take place according to the timing control signals and inputs 
 
 
 ## State Transition Diagram
-![image](https://user-images.githubusercontent.com/82582574/236429137-54a97e09-fb81-4efe-807e-6016c63b1276.png)
 
 
-https://user-images.githubusercontent.com/82582574/236429946-42a441c6-bcaf-487b-abef-a1fccc6ba1ec.mp4
+![image](https://github.com/user-attachments/assets/160106ce-2bc2-4d0c-be3b-9b6e498811c0)
+
+
 
 
 ## Working 
@@ -37,6 +38,7 @@ https://user-images.githubusercontent.com/82582574/236429946-42a441c6-bcaf-487b-
 
 ## Implementation
 
+![image](https://github.com/user-attachments/assets/d676ca1f-f776-4ac5-bc05-fc274b008dce)
 
 
 
