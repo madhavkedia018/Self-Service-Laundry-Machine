@@ -1,4 +1,4 @@
-module washing_machine_tb();
+module washing_machine_tb;
 
  reg clk, reset, door_close, start, filled, detergent_added, cycle_timeout, drained, spin_timeout;
  reg[1:0] coin;
@@ -65,4 +65,22 @@ module washing_machine_tb();
      drained = 0;
      detergent_added = 0;
      cycle_timeout = 0;
-     spin_timeout = 0
+     spin_timeout = 0;
+
+#10 coin=2'b11;
+#10 start=1;door_close=1;
+#10 filled=1;
+#10 detergent_added=1;
+
+#10 cycle_timeout=1;
+#20 drained=1;
+#20 spin_timeout=1;
+#20 $finish;
+end
+
+ 
+always
+begin
+#5 clk = ~clk;
+end
+endmodule
