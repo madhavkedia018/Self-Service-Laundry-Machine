@@ -1,7 +1,7 @@
 # Self-Service Laundry Machine
 To make a washing machine using Verilog
 
-
+  
 ## Introduction 
 The project aims to design a behavioural model for a working Washing Machine prototype in Verilog using a Mealy 
 Finite State Machine  model which charges Rs.2 per wash. 
